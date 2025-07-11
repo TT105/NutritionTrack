@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>食材登録</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <title>栄養管理アプリ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>食材の登録</h1>
-    <form action="/add" method="post">
-        <label>食材名: <input type="text" name="name" required></label><br>
-        <label>量 (g): <input type="number" name="quantity" required></label><br>
-        <label>カロリー: <input type="number" name="calories" required></label><br>
+    <h1>🍚 栄養管理アプリ</h1>
+
+    <form id="food-form">
+        <input type="text" id="food-name" placeholder="食材名（例：にんじん）" required>
+        <input type="number" id="food-weight" placeholder="使用量(g)" required>
         <button type="submit">追加</button>
     </form>
 
-    <h2>登録済みの食材</h2>
-    <ul>
-        <li th:each="item : ${foodList}" th:text="${item.name} + ' - ' + ${item.quantity} + 'g - ' + ${item.calories} + 'kcal'"></li>
-    </ul>
+    <h2>📋 登録済み食材</h2>
+    <ul id="food-list"></ul>
+
+    <h2>🔥 栄養素合計</h2>
+    <p id="summary">カロリー: 0 kcal｜たんぱく質: 0g｜脂質: 0g｜炭水化物: 0g</p>
+
+    <script src="script.js"></script>
 </body>
 </html>
