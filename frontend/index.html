@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>栄養管理アプリ</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <h1>🍚 栄養管理アプリ</h1>
 
     <form id="food-form">
-        <input type="text" id="food-name" placeholder="食材名（例：にんじん）" required>
-        <input type="number" id="food-weight" placeholder="使用量(g)" required>
+        <input type="text" id="food-name" placeholder="食材名（例：にんじん）" required />
+        <input type="number" id="food-weight" placeholder="使用量(g)" required min="1" />
         <button type="submit">追加</button>
     </form>
 
@@ -18,7 +18,7 @@
     <ul id="food-list"></ul>
 
     <h2>🔥 栄養素合計</h2>
-    <p id="summary">カロリー: 0 kcal｜たんぱく質: 0g｜脂質: 0g｜炭水化物: 0g</p>
+    <p id="summary">カロリー: 0 kcal ｜たんぱく質: 0 g ｜脂質: 0 g ｜炭水化物: 0 g</p>
 
     <script src="script.js"></script>
 </body>
