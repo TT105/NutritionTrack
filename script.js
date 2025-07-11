@@ -9,7 +9,11 @@ const foodData = {
 
 let total = { cal: 0, protein: 0, fat: 0, carb: 0 };
 
-document.getElementById("food-form").addEventListener("submit", function(e) {
+const form = document.getElementById("food-form");
+const foodList = document.getElementById("food-list");
+const summary = document.getElementById("summary");
+
+form.addEventListener("submit", function(e) {
     e.preventDefault();
 
     const name = document.getElementById("food-name").value.trim();
@@ -17,6 +21,10 @@ document.getElementById("food-form").addEventListener("submit", function(e) {
 
     if (!foodData[name]) {
         alert("その食材はデータベースにありません。");
+        return;
+    }
+    if (weight <= 0 || isNaN(weight)) {
+        alert("使用量は1以上の数値を入力してください。");
         return;
     }
 
@@ -30,14 +38,13 @@ document.getElementById("food-form").addEventListener("submit", function(e) {
 
     const li = document.createElement("li");
     li.textContent = `${name}：${weight}g`;
-    document.getElementById("food-list").appendChild(li);
+    foodList.appendChild(li);
 
     updateSummary();
 
-    document.getElementById("food-form").reset();
+    form.reset();
 });
 
 function updateSummary() {
-    const p = document.getElementById("summary");
-    p.textContent = `カロリー: ${total.cal.toFixed(1)} kcal ｜たんぱく質: ${total.protein.toFixed(1)}g ｜脂質: ${total.fat.toFixed(1)}g ｜炭水化物: ${total.carb.toFixed(1)}g`;
+    summary.textContent = `カロリー: ${total.cal.toFixed(1)} kcal ｜たんぱく質: ${total.protein.toFixed(1)} g ｜脂質: ${total.fat.toFixed(1)} g ｜炭水化物: ${total.carb.toFixed(1)} g`;
 }
