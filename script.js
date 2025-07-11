@@ -14,7 +14,7 @@ const foodData = {
   "ほうれん草 (ゆで)": { cal: 26, protein: 3.5, fat: 0.7, carb: 4.6 },
   "牛乳 (普通)": { cal: 61, protein: 3.3, fat: 3.8, carb: 4.8 },
   "食パン (6枚切り)": { cal: 264, protein: 8.9, fat: 4.4, carb: 46.7 },
-  "豚バラ肉 (生)": { cal: 366, protein: 14.4, fat: 34.6, carb: 0.1 }
+  "豚バラ肉 (生)": { cal: 366, protein: 14.4, fat: 34.6, carb: 0.1 },
     "牛ロース (生)": { cal: 220, protein: 19.9, fat: 15.3, carb: 0.1 },
   "豚ロース (生)": { cal: 240, protein: 19.3, fat: 17.1, carb: 0.1 },
   "キャベツ (生)": { cal: 23, protein: 1.3, fat: 0.2, carb: 5.2 },
@@ -23,10 +23,10 @@ const foodData = {
   "いわし (生)": { cal: 216, protein: 26.6, fat: 13.0, carb: 0.1 },
   "まぐろ (赤身, 生)": { cal: 115, protein: 26.4, fat: 1.4, carb: 0.1 },
   "納豆": { cal: 190, protein: 16.5, fat: 10.0, carb: 10.6 },
-  "かぼちゃ (皮つき, 生)": { cal: 91, protein: 1.6, fat: 0.3, carb: 20.6 },
-  "さつまいも (皮つき, 生)": { cal: 132, protein: 1.2, fat: 0.2, carb: 31.5 }
-　"えび (生)": { cal: 82, protein: 19.1, fat: 0.6, carb: 0.1 },
-  "いか (生)": { cal: 76, protein: 17.9, fat: 0.8, carb: 0.1 },
+  "かぼちゃ": { cal: 91, protein: 1.6, fat: 0.3, carb: 20.6 },
+ "さつまいも":{ cal: 132, protein: 1.2, fat: 0.2, carb: 31.5 },
+　"えび": { cal: 82, protein: 19.1, fat: 0.6, carb: 0.1 },
+  "いか": { cal: 76, protein: 17.9, fat: 0.8, carb: 0.1 },
   "味噌": { cal: 190, protein: 12.5, fat: 6.0, carb: 25.0 },
   "醤油": { cal: 71, protein: 7.8, fat: 0.1, carb: 10.1 },
   "米酢": { cal: 19, protein: 0.1, fat: 0.0, carb: 4.8 },
@@ -34,7 +34,7 @@ const foodData = {
   "枝豆": { cal: 135, protein: 11.5, fat: 6.3, carb: 11.3 },
   "しいたけ (生)": { cal: 18, protein: 3.0, fat: 0.4, carb: 4.2 },
   "たら (生)": { cal: 77, protein: 17.6, fat: 0.7, carb: 0.1 },
-  "豚肩ロース (生)": { cal: 253, protein: 19.4, fat: 18.5, carb: 0.1 }
+  "豚肩ロース (生)": { cal: 253, protein: 19.4, fat: 18.5, carb: 0.1 },
   "いちご": { cal: 34, protein: 0.9, fat: 0.1, carb: 8.5 },
   "メロン": { cal: 40, protein: 0.9, fat: 0.1, carb: 9.8 },
   "ぶどう": { cal: 59, protein: 0.4, fat: 0.2, carb: 14.8 },
@@ -54,7 +54,7 @@ const foodData = {
   "レンズ豆 (ゆで)": { cal: 110, protein: 9.0, fat: 0.4, carb: 19.8 },
   "オリーブオイル": { cal: 896, protein: 0.0, fat: 99.8, carb: 0.0 },
   "砂糖": { cal: 384, protein: 0.0, fat: 0.0, carb: 99.2 },
-  "はちみつ": { cal: 294, protein: 0.3, fat: 0.0, carb: 79.7 }
+  "はちみつ": { cal: 294, protein: 0.3, fat: 0.0, carb: 79.7 },
 　 "いちご": { cal: 34, protein: 0.9, fat: 0.1, carb: 8.5 },
   "メロン": { cal: 40, protein: 0.9, fat: 0.1, carb: 9.8 },
   "ぶどう": { cal: 59, protein: 0.4, fat: 0.2, carb: 14.8 },
@@ -74,15 +74,15 @@ const foodData = {
   "レンズ豆 (ゆで)": { cal: 110, protein: 9.0, fat: 0.4, carb: 19.8 },
   "オリーブオイル": { cal: 896, protein: 0.0, fat: 99.8, carb: 0.0 },
   "砂糖": { cal: 384, protein: 0.0, fat: 0.0, carb: 99.2 },
-  "はちみつ": { cal: 294, protein: 0.3, fat: 0.0, carb: 79.7 }
+  "はちみつ": { cal: 294, protein: 0.3, fat: 0.0, carb: 79.7 },
 　"とうもろこし": { cal: 86, protein: 3.3, fat: 1.2, carb: 19.0 },
-  "ほうれん草 (生)": { cal: 20, protein: 2.2, fat: 0.4, carb: 3.6 },
+  "ほうれん草 ": { cal: 20, protein: 2.2, fat: 0.4, carb: 3.6 },
   "レタス": { cal: 12, protein: 0.6, fat: 0.1, carb: 2.6 },
   "にんにく": { cal: 139, protein: 6.3, fat: 0.5, carb: 30.6 },
   "しょうが": { cal: 30, protein: 0.6, fat: 0.1, carb: 7.3 },
   "たらこ": { cal: 140, protein: 24.0, fat: 4.4, carb: 1.8 },
-  "うなぎ (蒲焼き)": { cal: 293, protein: 23.0, fat: 21.4, carb: 4.2 },
-  "まぐろ (トロ, 生)": { cal: 340, protein: 20.0, fat: 28.0, carb: 0.1 },
+  "うなぎ ": { cal: 293, protein: 23.0, fat: 21.4, carb: 4.2 },
+  "まぐろ ": { cal: 340, protein: 20.0, fat: 28.0, carb: 0.1 },
   "ソーセージ": { cal: 300, protein: 13.0, fat: 26.0, carb: 5.0 },
   "ツナ缶 (オイル漬け)": { cal: 280, protein: 23.0, fat: 20.0, carb: 0.1 },
   "コーンフレーク": { cal: 378, protein: 8.0, fat: 1.0, carb: 85.0 },
@@ -113,7 +113,7 @@ const foodData = {
   "パン粉": { cal: 365, protein: 10.0, fat: 2.0, carb: 75.0 },
   "ごま油": { cal: 896, protein: 0.0, fat: 99.8, carb: 0.0 },
   "ケチャップ": { cal: 105, protein: 1.3, fat: 0.1, carb: 25.0 },
-  "マヨネーズ": { cal: 697, protein: 1.5, fat: 76.0, carb: 3.6 }
+  "マヨネーズ": { cal: 697, protein: 1.5, fat: 76.0, carb: 3.6 },
 　"牛ひき肉": { cal: 250, protein: 17.0, fat: 20.0, carb: 0.1 },
   "豚ひき肉": { cal: 300, protein: 18.0, fat: 25.0, carb: 0.1 },
   "あさり": { cal: 30, protein: 6.0, fat: 0.5, carb: 1.5 },
@@ -131,7 +131,7 @@ const foodData = {
   "かつお": { cal: 108, protein: 25.8, fat: 0.5, carb: 0.1 },
   "日本酒": { cal: 103, protein: 0.3, fat: 0.0, carb: 3.6 },
   "赤ワイン": { cal: 73, protein: 0.1, fat: 0.1, carb: 1.5 },
-  "焼酎": { cal: 146, protein: 0.0, fat: 0.0, carb: 0.0 }
+  "焼酎": { cal: 146, protein: 0.0, fat: 0.0, carb: 0.0 },
 　 "グレープフルーツ": { cal: 38, protein: 0.9, fat: 0.1, carb: 9.6 },
   "レモン": { cal: 44, protein: 0.9, fat: 0.1, carb: 10.4 },
   "アボカド": { cal: 187, protein: 2.5, fat: 18.0, carb: 6.7 },
@@ -147,7 +147,7 @@ const foodData = {
   "白ごま": { cal: 597, protein: 20.3, fat: 54.2, carb: 17.6 },
   "ねりごま": { cal: 650, protein: 18.0, fat: 60.0, carb: 13.0 },
   "鶏ささみ": { cal: 105, protein: 23.9, fat: 0.8, carb: 0.0 },
-  "豚ヒレ肉": { cal: 129, protein: 22.2, fat: 3.7, carb: 0.1 }
+  "豚ヒレ肉": { cal: 129, protein: 22.2, fat: 3.7, carb: 0.1 },
 };
 
 let totalNutrition = { cal: 0, protein: 0, fat: 0, carb: 0 };
