@@ -1,6 +1,6 @@
-// 食材ごとの栄養データ（100gあたり）
+// 食材の栄養データ（100gあたり）
 const foodData = {
-　"にんじん": { cal: 37, protein: 0.6, fat: 0.1, carb: 8.7 },
+   "にんじん": { cal: 37, protein: 0.6, fat: 0.1, carb: 8.7 },
   "ごはん (精白米, 炊飯後)": { cal: 156, protein: 2.5, fat: 0.3, carb: 34.2 },
   "鶏むね肉 (皮なし, 生)": { cal: 108, protein: 23.0, fat: 1.9, carb: 0.0 },
   "木綿豆腐": { cal: 72, protein: 6.6, fat: 4.2, carb: 2.0 },
@@ -148,40 +148,49 @@ const foodData = {
   "ねりごま": { cal: 650, protein: 18.0, fat: 60.0, carb: 13.0 },
   "鶏ささみ": { cal: 105, protein: 23.9, fat: 0.8, carb: 0.0 },
   "豚ヒレ肉": { cal: 129, protein: 22.2, fat: 3.7, carb: 0.1 }
-
 };
 
-let total = { cal: 0, protein: 0, fat: 0, carb: 0 };
+let totalNutrition = { cal: 0, protein: 0, fat: 0, carb: 0 };
 
-document.getElementById("food-form").addEventListener("submit", function(e) {
+const form = document.getElementById("food-form");
+const foodList = document.getElementById("food-list");
+const nutritionSummary = document.getElementById("nutrition-summary");
+
+form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const name = document.getElementById("food-name").value.trim();
-    const weight = parseFloat(document.getElementById("food-weight").value);
+    const weight = Number(document.getElementById("food-weight").value);
 
     if (!foodData[name]) {
-        alert("その食材はデータベースにありません。");
+        alert("この食材はデータベースにありません。");
+        return;
+    }
+    if (weight <= 0) {
+        alert("量は1以上の数値を入力してください。");
         return;
     }
 
+    // 栄養素計算
+    const nutrition = foodData[name];
     const factor = weight / 100;
-    const food = foodData[name];
 
-    total.cal     += food.cal * factor;
-    total.protein += food.protein * factor;
-    total.fat     += food.fat * factor;
-    total.carb    += food.carb * factor;
+    totalNutrition.cal += nutrition.cal * factor;
+    totalNutrition.protein += nutrition.protein * factor;
+    totalNutrition.fat += nutrition.fat * factor;
+    totalNutrition.carb += nutrition.carb * factor;
 
+    // リストに追加
     const li = document.createElement("li");
     li.textContent = `${name}：${weight}g`;
-    document.getElementById("food-list").appendChild(li);
+    foodList.appendChild(li);
 
     updateSummary();
 
-    document.getElementById("food-form").reset();
+    // フォームリセット
+    form.reset();
 });
 
 function updateSummary() {
-    const p = document.getElementById("summary");
-    p.textContent = `カロリー: ${total.cal.toFixed(1)} kcal ｜たんぱく質: ${total.protein.toFixed(1)}g ｜脂質: ${total.fat.toFixed(1)}g ｜炭水化物: ${total.carb.toFixed(1)}g`;
+    nutritionSummary.textContent = `カロリー: ${totalNutrition.cal.toFixed(1)} kcal | たんぱく質: ${totalNutrition.protein.toFixed(1)} g | 脂質: ${totalNutrition.fat.toFixed(1)} g | 炭水化物: ${totalNutrition.carb.toFixed(1)} g`;
 }
